@@ -1,0 +1,46 @@
+
+
+.judul1{
+    color: brown;
+}
+.gmbr1{
+    text-align: center;
+    
+}
+.teks1{
+    color: brown;
+    margin: auto;
+    text-align: justify;
+    background-color: bisque;
+    height: auto;
+    width: 100%;
+    min-height: 100vh;
+    
+}
+.kon1{
+    border: solid thin black;
+    border-radius: 10px;
+    padding: 5px;
+    margin: auto;
+    background-color: rgb(209, 73, 73);
+    display: flex;
+    
+}
+.btnOpsi{
+    border: solid;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 15px;
+    margin: 5px;
+}
+.btnOpsi:hover{
+    color: aqua;
+}
+.intro{
+    color: rgb(164, 10, 10);
+    text-align: justify;
+}
+img {
+    border: solid gray;
+    border-radius: 15px;
+}
