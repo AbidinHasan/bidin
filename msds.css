@@ -21,12 +21,21 @@ a:hover{
 body{
     background-color: bisque;
 }
-button{
-    padding: 15px;
-    background-color: aquamarine;
-    cursor: pointer;
+.kon1{
+    border: solid thin black;
     border-radius: 10px;
+    padding: 5px;
+    margin: auto;
+    background-color: rgb(209, 73, 73);
+    display: flex;
+    
 }
-button:hover{
-    color: gray;
+.btnOpsi{
+    border: solid;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 15px;
+    margin: 5px;
 }
+.btnOpsi:hover{
+    color: aqua;
