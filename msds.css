@@ -1,0 +1,29 @@
+table{
+    margin: auto;
+    
+}
+td{
+    padding: 15px;
+}
+a{ 
+    border: solid;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: aquamarine;
+
+}
+a:hover{
+    color: gray;
+}
+body{
+    background-color: bisque;
+}
+button{
+    padding: 10px;
+    background-color: aquamarine;
+    cursor: pointer;
+    border-radius: 10px;
+}
+button:hover{
+    color: gray;
+}
