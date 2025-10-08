@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Debit STP</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="debit.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+        <div class="toolbar">
+            <button class="btnOpsi" onclick="window.location.href='index.html'";>HOME</button>
+            <button class="btnOpsi" onclick="window.location.href='msds.html'";>MSDS</button>
+            <button class="btnOpsi" onclick="window.location.href='wi.html'";>WORK INSTRUCTION</button>
+        </div>
+        <h1><b>Debit STP</b></h1>
+        <div class="kont1">
+            <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+            <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+            <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap.min.js"></script>
+            <script src="https://cdn.datatables.net/fixedheader/3.2.0/js/dataTables.fixedHeader.min.js"></script>
+            <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+            <script src="https://cdn.datatables.net/responsive/2.2.9/js/responsive.bootstrap.min.js"></script>
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+            <script type="text/javascript" src="data.json"></script>
+            <script type="text/javascript">
+            $(document).ready(function () {
+            $("#example").DataTable({
+            ajax: "https://script.google.com/macros/s/AKfycbxjpF3WMVyEMqsOdRfT9rKtFz0IdntmhFrT0Ja9A2IXqhvW7vf-3ztbOBqrzq_AIXow/exec",
+            columns: [
+            {
+                title: "Tanggal",
+                data: "Tanggal",
+                },
+                {
+                title: "pH In",
+                data: "pH in",
+                },
+                {
+                title: "pH Out",
+                data: "pH out",
+                },
+                {
+                title: "Inlet",
+                data: "inlet",
+                },
+                {
+                title: "Outlet",
+                data: "outlet",
+                },
+                {
+                title: "Debit Output",
+                data: "Total Debit",
+                },
+            
+                ],
+                
+                });
+            });
+            </script>
+        </div>
+        <div class="kont2">
+            <table id="example" border="1"></table>
+        </div>
+        
+
+    </body>
+</html>

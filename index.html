@@ -3,15 +3,50 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>IPAL-BMJ</title>
+        <link rel="stylesheet" href="titik3.css">
         <link rel="stylesheet" href="index.css">
         
     </head>
     <body>
         <div class="kon1">
-            <button class="btnOpsi" onclick="window.location.href='#';">HOME</button>
-            <button class="btnOpsi" onclick=window.location.href="msds.html";>MSDS</b>
-            <button class="btnOpsi" onclick=window.location.href="wi.html";>WORK INSTRUCTION</b>
+            <button class="btnOpsi" onclick="window.location.href='#'";>HOME</button>
+            <button class="btnOpsi" onclick="window.location.href='msds.html'";>MSDS</button>
+            <button class="btnOpsi" onclick="window.location.href='wi.html'";>WORK INSTRUCTION</button>
+            
         </div>
+
+        <div class="dropdown" id="menu1">
+  <button class="menu-btn">🧭</button>
+  <div class="dropdown-content">
+    <a href="DebitSTP.html">Debit STP</a>
+    <a href="DebitWWTP.html">Debit WWTP</a>
+  </div>
+</div>
+
+<script>
+  // Event untuk setiap dropdown
+  document.querySelectorAll('.dropdown').forEach(drop => {
+    const btn = drop.querySelector('.menu-btn');
+
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+
+      // Tutup semua menu lain dulu
+      document.querySelectorAll('.dropdown').forEach(d => {
+        if (d !== drop) d.classList.remove('show');
+      });
+
+      // Toggle menu ini
+      drop.classList.toggle('show');
+    });
+  });
+
+  // Tutup semua dropdown jika klik di luar
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('show'));
+  });
+</script>
+            
         <div class="gmbr1">
             <h1 class="judul1">Dashborad IPAL</h1>
             <img src="https://ik.imagekit.io/galleryBiden/foto/6194777167091582224.jpg?updatedAt=1749007762635" width="50%" alt="aerob">
