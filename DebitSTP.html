@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap.min.css">
         <link rel="stylesheet" href="debit.css">
+        <link rel="stylesheet" href="titik3.css">
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
@@ -66,7 +67,37 @@
             <table id="example" class="table table-striped table-bordered" style="width:100%"></table>
         </div>
         
-        
+        <div class="mudun" id="menu1">
+  <button class="menu-btn">🧭</button>
+  <div class="mudun-content">
+    <a href="DebitSTP.html">Debit STP</a>
+    <a href="DebitWWTP.html">Debit WWTP</a>
+  </div>
+</div>
+
+<script>
+  // Event untuk setiap mudun
+  document.querySelectorAll('.mudun').forEach(drop => {
+    const btn = drop.querySelector('.menu-btn');
+
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+
+      // Tutup semua menu lain dulu
+      document.querySelectorAll('.mudun').forEach(d => {
+        if (d !== drop) d.classList.remove('show');
+      });
+
+      // Toggle menu ini
+      drop.classList.toggle('show');
+    });
+  });
+
+  // Tutup semua mudun jika klik di luar
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.mudun').forEach(d => d.classList.remove('show'));
+  });
+</script>
 
     </body>
 </html>

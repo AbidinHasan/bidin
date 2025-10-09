@@ -1,56 +1,57 @@
-
-.dropdown {
+.mudun {
   position: absolute;
   right: 0;
-  top: 30%;
+  top: 20%;
   display: inline-block;
   border: solid thin gray;
-  border-radius: 10px;
+  border-radius: 50px;
+  
 }
 
 /* Tombol titik tiga */
 .menu-btn {
   background: none;
   border: none;
-  font-size: 40px;
+  font-size: 50px;
   cursor: pointer;
   color: #333;
-  padding: 6px 10px;
+  padding: 1px;
   border-radius: 6px;
 }
 
 .menu-btn:hover {
   background-color: #e0e0e0;
+  border-radius: 50px;
 }
 
-/* Isi dropdown */
-.dropdown-content {
+/* Isi mudun */
+.mudun-content {
   display: none;
   position: absolute;
-  right: 0;
-  top: 100%;
+  right: 110%;
+  top: 10%;
   background-color: #fff;
-  min-width: 140px;
+  min-width: 170px;
   box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
   border-radius: 8px;
   z-index: 999;
   overflow: hidden;
 }
 
-.dropdown-content a {
+.mudun-content a {
   color: #333;
-  padding: 10px 14px;
+  padding: 20px 14px;
   text-decoration: none;
   display: block;
-  font-size: 14px;
+  font-size: 19px;
   transition: background 0.2s;
 }
 
-.dropdown-content a:hover {
+.mudun-content a:hover {
   background-color: #f0dada;
 }
 
-/* Tampilkan dropdown saat aktif */
-.dropdown.show .dropdown-content {
+/* Tampilkan mudun saat aktif */
+.mudun.show .mudun-content {
   display: block;
 }
