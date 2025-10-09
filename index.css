@@ -12,13 +12,14 @@
     margin: auto;
     text-align: justify;
     background-color: bisque;
+    border-radius: 8px;
     height: auto;
     width: 100%;
     min-height: 100vh;
     
 }
 .kon1{
-    border: solid thin black;
+    
     border-radius: 10px;
     padding: 5px;
     margin: auto;
@@ -27,7 +28,7 @@
     
 }
 .btnOpsi{
-    border: solid;
+    border: thin;
     padding: 15px;
     cursor: pointer;
     border-radius: 15px;

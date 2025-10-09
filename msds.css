@@ -6,11 +6,13 @@ h2{
     text-align: center;
 }
 td{
-    padding: 15px;
+    padding: 17px;
 }
 a{ 
-    border: solid;
-    padding: 5px;
+    border: thin;
+    text-decoration: none;
+    color: black;
+    padding: 10px;
     border-radius: 10px;
     background-color: aquamarine;
 
@@ -22,7 +24,7 @@ body{
     background-color: bisque;
 }
 .kon1{
-    border: solid thin black;
+    
     border-radius: 10px;
     padding: 5px;
     margin: auto;
@@ -31,7 +33,7 @@ body{
     
 }
 .btnOpsi{
-    border: solid;
+    border: thin;
     padding: 15px;
     cursor: pointer;
     border-radius: 15px;
