@@ -1,33 +1,22 @@
-.kont2{
-    margin: auto;
-    padding: 10px;
-    text-align: center;
-}
 body{
-    background-color: bisque;
+background-color: bisque;
 }
-h1{
-    text-align: center;
-}
-.toolbar{
-    
-    border-radius: 10px;
-    padding: 5px;
-    margin: auto;
-    background-color: rgb(209, 73, 73);
-    display: flex;
-    
+.kon1{
+
+border-radius: 10px;
+padding: 5px;
+margin: auto;
+background-color: rgb(209, 73, 73);
+display: flex;
+
 }
 .btnOpsi{
-    border: thin;
-    padding: 15px;
-    cursor: pointer;
-    border-radius: 15px;
-    margin: 5px;
+border: thin;
+padding: 15px;
+cursor: pointer;
+border-radius: 15px;
+margin: 5px;
 }
 .btnOpsi:hover{
-    color: aqua;
-}
-table{
-    margin: auto;
+color: aqua;
 }
