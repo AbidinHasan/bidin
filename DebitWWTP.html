@@ -10,21 +10,42 @@
   </head>
   <body>
     <div class="kon1">
-            <button class="btnOpsi" onclick="window.location.href='index.html'";>HOME</button>
-            <button class="btnOpsi" onclick="window.location.href='msds.html'";>MSDS</button>
-            <button class="btnOpsi" onclick="window.location.href='wi.html'";>WORK INSTRUCTION</button>
-            
-        </div>
+      <button class="btnOpsi" onclick="window.location.href='index.html'">HOME</button>
+      <button class="btnOpsi" onclick="window.location.href='msds.html'">MSDS</button>
+      <button class="btnOpsi" onclick="window.location.href='wi.html'">WORK INSTRUCTION</button>
+    </div>
+
     <div class="container">
       <h1 class="text-center mb-4">Debit WWTP</h1>
+
+      <!-- Dropdown filter bulan -->
+      <div class="mb-3 text-left">
+        <label for="bulanFilter" class="form-label fw-bold">Bulan:</label>
+        <select id="bulanFilter" class="form-select w-auto d-inline-block" onchange="filterBulan()">
+          <option value="">All</option>
+          <option value="01">Januari</option>
+          <option value="02">Februari</option>
+          <option value="03">Maret</option>
+          <option value="04">April</option>
+          <option value="05">Mei</option>
+          <option value="06">Juni</option>
+          <option value="07">Juli</option>
+          <option value="08">Agustus</option>
+          <option value="09">September</option>
+          <option value="10">Oktober</option>
+          <option value="11">November</option>
+          <option value="12">Desember</option>
+        </select>
+      </div>
+
       <div class="table-responsive">
         <table class="table table-bordered table-striped" id="dataTable">
           <thead class="table-dark">
-            <tr id="tableHead">
+            <tr id="tableHead" class="text-center">
               <th>Loading bang......</th>
             </tr>
           </thead>
-          <tbody id="tableBody">
+          <tbody id="tableBody" class="text-center">
             <tr><td>Tunggu Bentarr...</td></tr>
           </tbody>
         </table>
@@ -32,68 +53,160 @@
     </div>
 
     <script>
-      const GAS_URL = "https://script.google.com/macros/s/AKfycbz9uo9xYc58gBTVEzOV7BAP3SfRKsWr9iU44VveZvk98_ZIuUirBO7mMwSOntR4q3G6ZA/exec";
+  const GAS_URL = "https://script.google.com/macros/s/AKfycbwIWXU8jY_SxagKzVsWsbEbz12ZFvQ5O2D75d-vyPXbETNpHjZAFcsRtj6CjJ1ZPJ7n/exec";
+  let allData = []; // data asli dari GAS
 
-      function tampilkanData(data) {
-        const headRow = document.getElementById("tableHead");
-        const bodyTable = document.getElementById("tableBody");
+  // ----- helper: ambil bulan dari berbagai format tanggal -----
+  function parseMonthFromCell(val) {
+  if (!val) return null;
 
-        if (!data || !data.hasil || data.hasil.length === 0) {
-          headRow.innerHTML = "<th>Tidak ada data</th>";
-          bodyTable.innerHTML = "<tr><td>Kosong</td></tr>";
-          return;
-        }
+  const s = String(val).trim();
+  if (s === "") return null;
 
-        // Buat header
-        const headers = Object.keys(data.hasil[0]);
-        headRow.innerHTML = headers.map(h => `<th>${h}</th>`).join("");
+  // --- cek angka murni (serial / epoch) ---
+  if (!isNaN(s) && s.length > 4) {
+    const d = new Date(Number(s));
+    if (!isNaN(d)) return String(d.getMonth() + 1).padStart(2, "0");
+  }
 
-        // Buat isi tabel
-        bodyTable.innerHTML = data.hasil
-          .map(row => {
-            return `<tr>${headers.map(h => `<td>${row[h] ?? ""}</td>`).join("")}</tr>`;
-          })
-          .join("");
-      }
+  // --- mapping nama bulan ---
+  const bulanMap = {
+    januari: "01",
+    februari: "02",
+    maret: "03",
+    april: "04",
+    mei: "05",
+    juni: "06",
+    juli: "07",
+    agustus: "08",
+    september: "09",
+    oktober: "10",
+    november: "11",
+    desember: "12"
+  };
 
-      // JSONP panggilan ke Google Apps Script
-      const script = document.createElement("script");
-      script.src = GAS_URL + "?callback=tampilkanData";
-      document.body.appendChild(script);
+  // cek apakah mengandung nama bulan
+  const lower = s.toLowerCase();
+  for (const [nama, kode] of Object.entries(bulanMap)) {
+    if (lower.includes(nama)) {
+      return kode;
+    }
+  }
 
-    </script>
+  // --- format numerik umum: D/M/YY atau YYYY-MM-DD ---
+  const regex1 = /^\d{1,2}[-/]\d{1,2}[-/]\d{2,4}$/;
+  const regex2 = /^\d{4}[-/]\d{1,2}[-/]\d{1,2}$/;
+
+  if (regex1.test(s) || regex2.test(s)) {
+    const p = s.split(/[-/]/);
+    if (p.length >= 2) {
+      return String(parseInt(p[1], 10)).padStart(2, "0");
+    }
+  }
+
+  // --- fallback: Date() parser internasional ---
+  const d = new Date(s);
+  if (!isNaN(d)) return String(d.getMonth() + 1).padStart(2, "0");
+
+  return null;
+}
+
+
+  // ----- render tabel; aman bila data kosong -----
+  function renderTable(dataArr) {
+    const headRow = document.getElementById("tableHead");
+    const bodyTable = document.getElementById("tableBody");
+
+    if (!dataArr || dataArr.length === 0) {
+      // gunakan header dari allData jika tersedia, kalau tidak tampilkan placeholder
+      const headers = (allData && allData.length) ? Object.keys(allData[0]) : ["Info"];
+      headRow.innerHTML = headers.map(h => `<th>${h}</th>`).join("");
+      bodyTable.innerHTML = `<tr><td colspan="${headers.length}">Gak ada ya</td></tr>`;
+      return;
+    }
+
+    const headers = Object.keys(dataArr[0]);
+    headRow.innerHTML = headers.map(h => `<th>${h}</th>`).join("");
+    bodyTable.innerHTML = dataArr
+      .map(row => `<tr>${headers.map(h => `<td>${row[h] ?? ""}</td>`).join("")}</tr>`)
+      .join("");
+  }
+
+  // ----- fungsi filter bulan (menggunakan parser di atas) -----
+  function filterBulan() {
+    const selected = document.getElementById("bulanFilter").value;
+    const selectedTwo = String(selected).padStart(2, "0");
+
+    // debug singkat (bisa dihapus nanti)
+    // console.log("Selected month:", selectedTwo);
+
+    // selalu filter dari data penuh
+    const source = [...allData];
+
+    if (!selected) {
+      renderTable(source);
+      return;
+    }
+
+    const filtered = source.filter(item => {
+      const bulan = parseMonthFromCell(item.Tanggal);
+      // console.log(item.Tanggal, "->", bulan); // aktifkan untuk debugging baris per baris
+      return bulan === selectedTwo;
+    });
+
+    renderTable(filtered);
+  }
+
+  // ----- callback JSONP dari GAS -----
+  function tampilkanData(data) {
+    if (!data || !data.hasil) {
+      document.getElementById("tableHead").innerHTML = "<th>Tidak ada data</th>";
+      document.getElementById("tableBody").innerHTML = "<tr><td>Kosong</td></tr>";
+      return;
+    }
+
+    allData = data.hasil;
+    // Pastikan tabel awal dibuat (pakai header dari data asli)
+    renderTable(allData);
+
+    // optional: tunjukkan contoh format tanggal di console (untuk debug)
+    if (allData.length) {
+      console.log("Contoh Tanggal (3 pertama):", allData.slice(0,3).map(r => ({raw: r.Tanggal, parsed: parseMonthFromCell(r.Tanggal)})));
+    }
+  }
+
+  // panggil GAS via JSONP
+  const script = document.createElement("script");
+  script.src = GAS_URL + "?callback=tampilkanData";
+  document.body.appendChild(script);
+</script>
+
+
+    <!-- Navigasi bawah -->
     <div class="mudun" id="menu1">
-        <button class="menu-btn">🧭</button>
-        <div class="mudun-content">
-            <a href="DebitSTP.html">Debit STP</a>
-            <a href="DebitWWTP.html">Debit WWTP</a>
-        </div>
-        </div>
+      <button class="menu-btn">🧭</button>
+      <div class="mudun-content">
+        <a href="DebitSTP.html">Debit STP</a>
+        <a href="DebitWWTP.html">Debit WWTP</a>
+      </div>
+    </div>
 
-        <script>
-        // Event untuk setiap mudun
-        document.querySelectorAll('.mudun').forEach(drop => {
-            const btn = drop.querySelector('.menu-btn');
-
-            btn.addEventListener('click', e => {
-            e.stopPropagation();
-
-            // Tutup semua menu lain dulu
-            document.querySelectorAll('.mudun').forEach(d => {
-                if (d !== drop) d.classList.remove('show');
-            });
-
-            // Toggle menu ini
-            drop.classList.toggle('show');
-            });
+    <script>
+      // Event menu bawah
+      document.querySelectorAll('.mudun').forEach(drop => {
+        const btn = drop.querySelector('.menu-btn');
+        btn.addEventListener('click', e => {
+          e.stopPropagation();
+          document.querySelectorAll('.mudun').forEach(d => {
+            if (d !== drop) d.classList.remove('show');
+          });
+          drop.classList.toggle('show');
         });
+      });
 
-        // Tutup semua mudun jika klik di luar
-        document.addEventListener('click', () => {
-            document.querySelectorAll('.mudun').forEach(d => d.classList.remove('show'));
-        });
-        </script>
-    
+      document.addEventListener('click', () => {
+        document.querySelectorAll('.mudun').forEach(d => d.classList.remove('show'));
+      });
+    </script>
   </body>
 </html>
-

@@ -4,6 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>WorkInstruction</title>
         <link rel="stylesheet" href="msds.css">
+        <link rel="stylesheet" href="titik3.css">
     </head>
     <body>
         <div class="kon1">
@@ -78,6 +79,31 @@
                 </tr>
             </table>
         </div>
+        <!-- Navigasi bawah -->
+        <div class="mudun" id="menu1">
+            <button class="menu-btn">🧭</button>
+            <div class="mudun-content">
+                <a href="DebitSTP.html">Debit STP</a>
+                <a href="DebitWWTP.html">Debit WWTP</a>
+            </div>
+            </div>
 
+            <script>
+            // Event menu bawah
+            document.querySelectorAll('.mudun').forEach(drop => {
+                const btn = drop.querySelector('.menu-btn');
+                btn.addEventListener('click', e => {
+                e.stopPropagation();
+                document.querySelectorAll('.mudun').forEach(d => {
+                    if (d !== drop) d.classList.remove('show');
+                });
+                drop.classList.toggle('show');
+                });
+            });
+
+            document.addEventListener('click', () => {
+                document.querySelectorAll('.mudun').forEach(d => d.classList.remove('show'));
+            });
+    </script>
     </body>
 </html>
