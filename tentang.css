@@ -1,0 +1,35 @@
+.konten1{
+border-radius: 10px;
+padding: 5px;
+background-color: rgb(209, 73, 73);
+}
+
+.bagan{
+    background: bisque;
+}
+.btnOpsi{
+border: thin;
+padding: 15px;
+cursor: pointer;
+border-radius: 15px;
+margin: 5px;
+}
+
+.btnOpsi:hover{
+color: aqua;
+}
+
+img{
+border-radius: 15px;
+}
+
+.gambarIPAL{
+    position: relative;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+}
+
+.konten2{
+    text-decoration: none;
+}

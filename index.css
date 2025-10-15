@@ -1,47 +1,70 @@
 
-
-.judul1{
-    color: brown;
-}
-.gmbr1{
-    text-align: center;
-    
-}
-.teks1{
-    color: brown;
-    margin: auto;
-    text-align: justify;
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
     background-color: bisque;
-    border-radius: 8px;
-    height: auto;
-    width: 100%;
     min-height: 100vh;
-    
-}
-.kon1{
-    
-    border-radius: 10px;
-    padding: 5px;
-    margin: auto;
-    background-color: rgb(209, 73, 73);
     display: flex;
-    
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
 }
-.btnOpsi{
-    border: thin;
-    padding: 15px;
+
+h1 {
+    margin-bottom: 30px;
+    color: rgb(44, 16, 16);
+    font-size: 2em;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.menu-card {
+    background-color: white;
+    color: #333;
+    border-radius: 20px;
+    width: 160px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     cursor: pointer;
-    border-radius: 15px;
-    margin: 5px;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
-.btnOpsi:hover{
-    color: aqua;
+
+.menu-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
 }
-.intro{
-    color: rgb(164, 10, 10);
-    text-align: justify;
+
+.menu-card img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
 }
-img {
-    border: solid gray;
-    border-radius: 15px;
+
+.menu-card span {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+@media (max-width: 600px) {
+    .menu-card {
+    width: 120px;
+    height: 150px;
+    }
+
+    .menu-card img {
+    width: 45px;
+    height: 45px;
+    }
 }
