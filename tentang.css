@@ -32,4 +32,11 @@ border-radius: 15px;
 
 .konten2{
     text-decoration: none;
+
+}
+
+@media (max-width: 500px) {
+    img{
+        width: 300px;
+    }
 }
