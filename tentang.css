@@ -28,15 +28,30 @@ border-radius: 15px;
     margin: auto;
     padding: 10px;
     text-align: center;
+    
 }
 
 .konten2{
     text-decoration: none;
+    text-align: justify;
+    padding-left: 10%;
+    padding-right: 10%;
+    
+}
 
+.bawah{
+    padding: 50px;
+}
+.bawah1{
+    padding: 20px;
+}
+
+.logo{
+    width: 80px;
 }
 
 @media (max-width: 500px) {
-    img{
+    .slides{
         width: 300px;
     }
 }

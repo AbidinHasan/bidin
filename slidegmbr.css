@@ -14,7 +14,7 @@ box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 display: flex;
 width: 600%;
 height: 100%;
-animation: slide 20s infinite;
+animation: slide 15s infinite;
 }
 
 .slides img {
