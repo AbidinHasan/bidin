@@ -38,6 +38,8 @@ h1 {
   box-shadow: 0 4px 10px rgba(255, 255, 255, 0.653);
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .menu-card:hover {

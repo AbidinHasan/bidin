@@ -1,44 +1,70 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Dashboard IPAL</title>
-        <link rel="stylesheet" href="index.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="https://ik.imagekit.io/galleryBiden/foto/hydro-power.png?updatedAt=1760495537409" type="image/x-icon">
-    </head>
-    <body>
-        <h1>Dashboard IPAL</h1>
+  <head>
+    <title>Dashboard IPAL</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="Jam.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="https://ik.imagekit.io/galleryBiden/foto/hydro-power.png?updatedAt=1760495537409"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <h1>Dashboard IPAL</h1>
+    <div class="jam">
+      <b id="waktu"></b>
+      <script src="jamTanggal.js"></script>
+    </div>
 
-        <div class="menu-container">
-            <div class="menu-card" onclick="window.location.href='DebitWWTP.html'">
-            <img src="https://ik.imagekit.io/galleryBiden/foto/waste%20(1).png?updatedAt=1760495778539" alt="wwtp">
-            <span>Debit WWTP</span>
-            </div>
+    <div class="menu-container">
+      <div class="menu-card" onclick="window.location.href='DebitSTP.html'">
+        <img
+          src="https://ik.imagekit.io/galleryBiden/foto/water-tap.png?updatedAt=1760495537448"
+          alt="stp"
+        />
+        <span>Debit STP</span>
+      </div>
+      <div class="menu-card" onclick="window.location.href='DebitWWTP.html'">
+        <img
+          src="https://ik.imagekit.io/galleryBiden/foto/waste%20(1).png?updatedAt=1760495778539"
+          alt="wwtp"
+        />
+        <span>Debit WWTP</span>
+      </div>
 
-            <div class="menu-card" onclick="window.location.href='DebitSTP.html'">
-            <img src="https://ik.imagekit.io/galleryBiden/foto/water-tap.png?updatedAt=1760495537448" alt="stp">
-            <span>Debit STP</span>
-            </div>
+      <div class="menu-card" onclick="window.location.href='msds.html'">
+        <img
+          src="https://ik.imagekit.io/galleryBiden/foto/search.png?updatedAt=1760495537486"
+          alt="MSDS"
+        />
+        <span>Material Safety Data Sheet</span>
+      </div>
 
-            <div class="menu-card" onclick="window.location.href='msds.html'">
-            <img src="https://ik.imagekit.io/galleryBiden/foto/search.png?updatedAt=1760495537486" alt="MSDS">
-            <span>Material Safety Data Sheet</span>
-            </div>
+      <div class="menu-card" onclick="window.location.href='wi.html'">
+        <img
+          src="https://ik.imagekit.io/galleryBiden/foto/treatment.png?updatedAt=1760495537338"
+          alt="WI"
+        />
+        <span>Work Instruction</span>
+      </div>
 
-            <div class="menu-card" onclick="window.location.href='wi.html'">
-            <img src="https://ik.imagekit.io/galleryBiden/foto/treatment.png?updatedAt=1760495537338" alt="WI">
-            <span>Work Instruction</span>
-            </div>
+      <div class="menu-card" onclick="window.location.href='HasilLAB.html'">
+        <img
+          src="https://ik.imagekit.io/galleryBiden/foto/reagent.png?updatedAt=1760496079098"
+          alt="internal"
+        />
+        <span>LAB Internal</span>
+      </div>
 
-            <div class="menu-card" onclick="window.location.href='HasilLAB.html'">
-            <img src="https://ik.imagekit.io/galleryBiden/foto/reagent.png?updatedAt=1760496079098" alt="internal">
-            <span>LAB Internal</span>
-            </div>
-
-            <div class="menu-card" onclick="window.location.href='tentang.html'">
-            <img src="https://ik.imagekit.io/galleryBiden/foto/water.png?updatedAt=1760495537428" alt="about">
-            <span>About</span>
-            </div>
-        </div>
-    </body>
+      <div class="menu-card" onclick="window.location.href='tentang.html'">
+        <img
+          src="https://ik.imagekit.io/galleryBiden/foto/water.png?updatedAt=1760495537428"
+          alt="about"
+        />
+        <span>About</span>
+      </div>
+    </div>
+  </body>
 </html>

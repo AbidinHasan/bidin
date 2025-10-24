@@ -46,7 +46,8 @@ ul li a,
   background: transparent;
   border: none;
   font-size: 14px;
-  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
 }
 .dropdown {
   position: absolute;
@@ -80,6 +81,7 @@ ul li a:hover,
   text-decoration: none;
   text-align: left;
   font-size: 13px;
+  transition: background 0.2s;
 }
 
 .dropdown-content a:hover {
