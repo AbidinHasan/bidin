@@ -1,22 +1,17 @@
-body{
-background-color: bisque;
+.table-responsive {
+  max-height: 400px; /* tinggi area scroll */
+  overflow-y: auto; /* aktifkan scroll vertikal */
 }
-.kon1{
-
-border-radius: 10px;
-padding: 5px;
-margin: auto;
-background-color: rgb(209, 73, 73);
-display: flex;
-
+th {
+  position: sticky;
+  top: 0;
+  color: white;
+  z-index: 100;
 }
-.btnOpsi{
-border: thin;
-padding: 15px;
-cursor: pointer;
-border-radius: 15px;
-margin: 5px;
-}
-.btnOpsi:hover{
-color: aqua;
+h1 {
+  margin-bottom: 30px;
+  color: rgb(108, 185, 201);
+  font-size: 50px;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.728);
+  text-align: center;
 }

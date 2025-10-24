@@ -1,44 +1,25 @@
-table{
-    margin: auto;
-    
+table {
+  margin: auto;
 }
-h2{
-    text-align: center;
+h1 {
+  margin-bottom: 30px;
+  color: rgb(108, 185, 201);
+  font-size: 2em;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.3);
+  text-align: center;
 }
-td{
-    padding: 17px;
+td {
+  padding: 17px;
 }
-a{ 
-    border: thin;
-    text-decoration: none;
-    color: black;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: aquamarine;
+.tabel {
+  border: thin;
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: aquamarine;
+}
 
-}
-a:hover{
-    color: gray;
-}
-body{
-    background-color: bisque;
-}
-.kon1{
-    
-    border-radius: 10px;
-    padding: 5px;
-    margin: auto;
-    background-color: rgb(209, 73, 73);
-    display: flex;
-    
-}
-.btnOpsi{
-    border: thin;
-    padding: 15px;
-    cursor: pointer;
-    border-radius: 15px;
-    margin: 5px;
-}
-.btnOpsi:hover{
-    color: aqua;
+.tabel:hover {
+  background: white;
 }

@@ -4,15 +4,37 @@
         <title>Tentang IPAL</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="tentang.css">
+        <link rel="stylesheet" href="kususnavbarabout.css">
         <link rel="stylesheet" href="slidegmbr.css">
         <link rel="shortcut icon" href="https://ik.imagekit.io/galleryBiden/foto/hydro-power.png?updatedAt=1760495537409" type="image/x-icon">
     </head>
     <body class="bagan">
-        <div class="konten1">
-            <button class="btnOpsi" onclick="window.location.href='index.html'";>HOME</button>
-            <button class="btnOpsi" onclick="window.location.href='msds.html'";>MSDS</button>
-            <button class="btnOpsi" onclick="window.location.href='wi.html'";>WORK INSTRUCTION</button>
-        </div>
+        <nav class="kon1">
+      <ul class="navbar">
+        <li class="navbar-btn"><a id="Home">合</a></li>
+
+        <li class="dropdown" id="laporanDropdown">
+          <button
+            class="dropdown-btn"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            <b>三</b>
+          </button>
+
+          <div class="dropdown-content" role="menu" aria-label="Laporan">
+            <a id="stp" role="menuitem">Debit STP</a>
+            <a id="wwtp" role="menuitem">Debit WWTP</a>
+            <a id="internalLAB">LAB Internal</a>
+            <a id="msds">MSDS</a>
+            <a id="wi">Work Instriction</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="spasi"></div>
+    <script src="navbar.js"></script>
+    <script src="link.js"></script>
         <div class="slider">
             <div class="slides">
             <img src="https://ik.imagekit.io/galleryBiden/foto/6260361356356207840.jpg?updatedAt=1749007737841" alt="Gambar 1">
@@ -41,7 +63,7 @@
             </p>
             <h3>Tujuan IPAL</h3>
 
-            <ul>
+            <ul class="tulisan">
                 <li><b>Mengurangi pencemaran lingkungan</b>: Limbah cair sering mengandung zat berbahaya (organik, kimia, bakteri, logam berat).</li>
                 <li><b>Melindungi kesehatan manusia</b>: Air limbah yang tidak diolah bisa menimbulkan penyakit menular.</li>
                 <li><b>Memungkinkan daur ulang</b>: Beberapa IPAL menghasilkan air olahan yang bisa digunakan kembali (misalnya untuk siram taman atau pendingin mesin).</li>
@@ -70,7 +92,7 @@
                 </ol>
 
                 <h3>Jenis IPAL</h3>
-                <ul>
+                <ul class="tulisan">
                     <li><b>IPAL Komunal</b> → untuk pemukiman padat penduduk.</li>
                     <li><b>Rumah Sakit</b> → khusus mengolah limbah medis cair.</li>
                     <li><b>IPAL Industri</b> → disesuaikan dengan jenis limbah pabrik (misalnya tekstil, makanan, kimia).</li>
@@ -89,7 +111,7 @@
         <div class="bawah1">
         </div>
         <div class="bawah">
-            <img class="logo" src="https://ik.imagekit.io/galleryBiden/foto/logo%20ABDN.png?updatedAt=1760764651097" alt="ABDN"> 
+            
             <p>©2025</p>
         </div>
     </body>

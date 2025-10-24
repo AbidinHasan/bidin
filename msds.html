@@ -1,94 +1,111 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>MSDS</title>
-        <link rel="stylesheet" href="msds.css">
-        <link rel="stylesheet" href="titik3.css">
-        <link rel="shortcut icon" href="https://ik.imagekit.io/galleryBiden/foto/hydro-power.png?updatedAt=1760495537409" type="image/x-icon">
-    </head>
-    <body>
-        
-        <div class="kon1">
-            <button class="btnOpsi" onclick="window.location.href='index.html'";>HOME</button>
-            <button class="btnOpsi" onclick="window.location.href='msds.html'";>MSDS</button>
-            <button class="btnOpsi" onclick="window.location.href='wi.html'";>WORK INSTRUCTION</button>
-            
-        </div>
-        
-        <div>
-            <h2>MATERIAL SAFETY DATA SHEET</h2>
-            <table>
-                
-                <tr>
-                    <td>
-                        <a href="https://ik.imagekit.io/galleryBiden/dokumen/MSDS_SODIUM_HYPO.pdf?updatedAt=1759820284728">SODIUM HYPOCHLORITE</a><br>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="https://ik.imagekit.io/galleryBiden/dokumen/MSDS_ULTRA%20BIOTIFIX.pdf?updatedAt=1751893181374">ULTRABIOTIFIX</a><br>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="https://ik.imagekit.io/galleryBiden/dokumen/MSDS_WTC-01.pdf?updatedAt=1751893180982">WTC 01</a><br>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="https://ik.imagekit.io/galleryBiden/dokumen/MSDS_CAUSTIC_SODA.pdf?updatedAt=1759840892991">CAUTIC SODA</a><br>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="https://ik.imagekit.io/galleryBiden/dokumen/MSDS_ULTRA%20NUTRI%20BIO%20S.pdf?updatedAt=1751893181120">ULTRA NUTRI BIO S</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="https://ik.imagekit.io/galleryBiden/dokumen/MSDS_COD_LR.pdf?updatedAt=1760107272771">COD LR</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="https://ik.imagekit.io/galleryBiden/dokumen/MSDS_COD_HR.pdf?updatedAt=1760107272836">COD HR</a>
-                    </td>
-                </tr>
-            </table>
-            
-            
-            
-            
-            
-            
-        </div>
-        <!-- Navigasi bawah -->
-        <div class="mudun" id="menu1">
-            <button class="menu-btn">🧭</button>
-            <div class="mudun-content">
-                <a href="DebitSTP.html">Debit STP</a>
-                <a href="DebitWWTP.html">Debit WWTP</a>
-                <a href="HasilLAB.html">Hasil LAB Internal</a>
-            </div>
-            </div>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Material Safety Data Sheet</title>
+    <link rel="stylesheet" href="msds.css" />
+    <link rel="stylesheet" href="navbar.css" />
+    <link
+      rel="shortcut icon"
+      href="https://ik.imagekit.io/galleryBiden/foto/hydro-power.png?updatedAt=1760495537409"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <nav class="kon1">
+      <ul>
+        <li><a id="Home" title="Home">合</a></li>
 
-            <script>
-            // Event menu bawah
-            document.querySelectorAll('.mudun').forEach(drop => {
-                const btn = drop.querySelector('.menu-btn');
-                btn.addEventListener('click', e => {
-                e.stopPropagation();
-                document.querySelectorAll('.mudun').forEach(d => {
-                    if (d !== drop) d.classList.remove('show');
-                });
-                drop.classList.toggle('show');
-                });
-            });
+        <li class="dropdown" id="laporanDropdown">
+          <button
+            class="dropdown-btn"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            <b>三</b>
+          </button>
 
-            document.addEventListener('click', () => {
-                document.querySelectorAll('.mudun').forEach(d => d.classList.remove('show'));
-            });
-    </script>
-    </body>
+          <div class="dropdown-content" role="menu" aria-label="Laporan">
+            <a id="stp" role="menuitem">Debit STP</a>
+            <a id="wwtp" role="menuitem">Debit WWTP</a>
+            <a id="internalLAB">LAB Internal</a>
+            <a id="msds">MSDS</a>
+            <a id="wi">Work Instriction</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="spasi"></div>
+    <script src="navbar.js"></script>
+    <script src="link.js"></script>
+
+    <div>
+      <h1>MATERIAL SAFETY DATA SHEET</h1>
+      <table>
+        <tr>
+          <td>
+            <a
+              class="tabel"
+              href="https://ik.imagekit.io/galleryBiden/dokumen/MSDS_SODIUM_HYPO.pdf?updatedAt=1759820284728"
+              >SODIUM HYPOCHLORITE</a
+            ><br />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a
+              class="tabel"
+              href="https://ik.imagekit.io/galleryBiden/dokumen/MSDS_ULTRA%20BIOTIFIX.pdf?updatedAt=1751893181374"
+              >ULTRABIOTIFIX</a
+            ><br />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a
+              class="tabel"
+              href="https://ik.imagekit.io/galleryBiden/dokumen/MSDS_WTC-01.pdf?updatedAt=1751893180982"
+              >WTC 01</a
+            ><br />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a
+              class="tabel"
+              href="https://ik.imagekit.io/galleryBiden/dokumen/MSDS_CAUSTIC_SODA.pdf?updatedAt=1759840892991"
+              >CAUTIC SODA</a
+            ><br />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a
+              class="tabel"
+              href="https://ik.imagekit.io/galleryBiden/dokumen/MSDS_ULTRA%20NUTRI%20BIO%20S.pdf?updatedAt=1751893181120"
+              >ULTRA NUTRI BIO S</a
+            >
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a
+              class="tabel"
+              href="https://ik.imagekit.io/galleryBiden/dokumen/MSDS_COD_LR.pdf?updatedAt=1760107272771"
+              >COD LR</a
+            >
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a
+              class="tabel"
+              href="https://ik.imagekit.io/galleryBiden/dokumen/MSDS_COD_HR.pdf?updatedAt=1760107272836"
+              >COD HR</a
+            >
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
 </html>

@@ -1,57 +1,35 @@
-.konten1{
-border-radius: 10px;
-padding: 5px;
-background-color: rgb(209, 73, 73);
+img {
+  border-radius: 15px;
 }
 
-.bagan{
-    background: bisque;
-}
-.btnOpsi{
-border: thin;
-padding: 15px;
-cursor: pointer;
-border-radius: 15px;
-margin: 5px;
+.gambarIPAL {
+  position: relative;
+  margin: auto;
+  padding: 10px;
+  text-align: center;
 }
 
-.btnOpsi:hover{
-color: aqua;
+.konten2 {
+  text-decoration: none;
+  text-align: justify;
+  padding-left: 10%;
+  padding-right: 10%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-img{
-border-radius: 15px;
+.bawah {
+  padding: 50px;
+}
+.bawah1 {
+  padding: 20px;
 }
 
-.gambarIPAL{
-    position: relative;
-    margin: auto;
-    padding: 10px;
-    text-align: center;
-    
-}
-
-.konten2{
-    text-decoration: none;
-    text-align: justify;
-    padding-left: 10%;
-    padding-right: 10%;
-    
-}
-
-.bawah{
-    padding: 50px;
-}
-.bawah1{
-    padding: 20px;
-}
-
-.logo{
-    width: 80px;
+.logo {
+  width: 80px;
 }
 
 @media (max-width: 500px) {
-    .slides{
-        width: 300px;
-    }
+  .slides {
+    width: 300px;
+  }
 }
