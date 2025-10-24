@@ -1,4 +1,4 @@
-img {
+.ipalimg {
   border-radius: 15px;
 }
 
@@ -15,17 +15,6 @@ img {
   padding-left: 10%;
   padding-right: 10%;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.bawah {
-  padding: 50px;
-}
-.bawah1 {
-  padding: 20px;
-}
-
-.logo {
-  width: 80px;
 }
 
 @media (max-width: 500px) {
